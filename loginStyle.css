@@ -1,4 +1,4 @@
-/* Basic reset */
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
@@ -14,11 +14,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('background-image.jpg'); /* Add a background image if desired */
+    /* background-image: url('background-image.jpg'); Optional background image */
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
+/* Header */
 header {
     width: 100%;
     padding: 20px 0;
@@ -28,6 +30,7 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav h1 {
@@ -55,25 +58,30 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s ease;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #f39c12;
+    background-color: #f39c12;
+    color: #fff;
 }
 
-main {
+/* Main login container */
+.login-container {
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    margin-top: 80px;
-    background-color: white;
+    max-width: 450px;
+    padding: 25px;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 0.8s ease-out;
+    position: relative;
+    margin-top: 90px; 
 }
 
-.login-form h2 {
+h2 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 24px;
@@ -81,13 +89,12 @@ main {
     animation: slideIn 0.6s ease-out;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
+/* Form fields */
 label {
     font-size: 14px;
     color: #555;
+    display: block;
+    margin-bottom: 5px;
 }
 
 input[type="email"],
@@ -97,6 +104,7 @@ input[type="password"] {
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    margin-bottom: 15px;
     transition: border-color 0.3s ease;
 }
 
@@ -123,6 +131,18 @@ button[type="submit"]:hover {
     background-color: #e67e22;
 }
 
+/* Error message popup */
+.error-message {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 15px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Footer */
 footer {
     position: fixed;
     bottom: 10px;
@@ -131,9 +151,10 @@ footer {
     font-size: 14px;
     color: #aaa;
     text-align: center;
+    animation: fadeIn 1s ease-out;
 }
 
-/* Animation */
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -165,8 +186,8 @@ footer {
     }
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* Responsive design */
+@media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         padding: 10px 0;
@@ -176,23 +197,33 @@ footer {
         margin-bottom: 10px;
     }
 
-    .login-form {
+    .login-container {
         width: 90%;
-        padding: 15px;
+        max-width: 400px;
+        padding: 20px;
     }
 
-    .login-form h2 {
+    h2 {
         font-size: 22px;
     }
 }
 
-@media (max-width: 400px) {
-    .login-form {
+@media (max-width: 480px) {
+    .login-container {
         width: 100%;
+        padding: 15px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
         padding: 10px;
     }
 
     button[type="submit"] {
         font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }
