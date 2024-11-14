@@ -1,0 +1,252 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff2aa;
+}
+header {
+    background-color: #333; /* Light blue background */
+    padding: 20px;
+    color: white;
+    height: 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.highlight {
+    color: #008ea8; /* Gold color for T and B */
+}
+
+h1 .highlight:nth-child(1) {
+    color: #59ff00; /* Different color for T */
+}
+
+h1 .highlight:nth-child(2) {
+    color: #59ff00; /* Different color for B */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ul li {
+    margin-left: 20px; /* Space between links */
+}
+
+ul li a {
+    color: white; /* Link color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+ul li a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+
+main {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+}
+
+.hero {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height:65vh; /* Adjust based on your design */
+    width: 100%;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the section without distortion */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h2, .hero p {
+    position: relative; 
+    z-index: 1; 
+    color: rgba(3, 0, 48, 0.911); 
+    text-align: center; 
+    animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+    /* margin-top: 70px; */
+}
+
+.hero h2 {
+    font-size: 3em; 
+    animation-delay: 0.3s; /* Delay for h2 */
+    margin-top: 110px;
+}
+
+.hero p {
+    font-size: 1.5em; 
+    animation-delay: 0.6s; /* Delay for p */
+}
+
+
+.destination {
+    margin-top: 40px;
+    text-align: center;
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow cards to wrap onto the next line */
+    justify-content: space-between; /* Space cards evenly */
+    
+}
+
+.destination h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    width: 100%; /* Make sure the heading spans the full width */
+    color: #59ff00;
+}
+
+/* Slide-in animation for the heading */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Start from the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at the original position */
+    }
+}
+
+/* Container for destination cards */
+.destination .dCards {
+    display: flex; /* Align the cards horizontally */
+    justify-content: center; /* Center the cards horizontally */
+    flex-wrap: wrap; /* Allow cards to wrap to the next row if needed */
+    gap: 20px; /* Adds space between the cards */
+    width: 100%; /* Make sure the cards take the full width of the container */
+    text-decoration: none;
+}
+
+/* Styling for individual destination cards */
+.dCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content inside each card */
+    width: 250px; /* Set a fixed width for the cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    opacity: 0; /* Start off invisible */
+    animation: fadeInUp 0.8s ease-out forwards; /* Apply animation for card appearance */
+}
+
+/* Fade-in animation for the cards */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start lower than the final position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
+.Destination h2 {
+    animation: slideInLeft 1s ease forwards; /* Apply animation */
+    margin-bottom: 20px; /* Space below the heading */
+}
+.dCard {
+    display: flex; /* Flexbox for card content */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center items horizontally */
+    width: calc(25% - 30px); /* Adjust width for four cards per row, accounting for margin */
+    margin: 15px; /* Margin around cards */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+/* Image styling within the card */
+.dCard img {
+    width: 100%; /* Make images responsive */
+    height: 150px; /* Fixed height for uniformity */
+}
+
+/* Title styling for each destination card */
+.dCard h3 {
+    background-color: #4A90E2; /* Card title background */
+    color: white; /* Text color */
+    width: 100%;
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Padding for title */
+    margin-top: 0.4px;
+    
+}
+
+/* Hover effect for the card */
+.dCard:hover {
+    transform: translateY(-4px); /* Lift effect on hover */
+}
+
+/* Ensure no underlining or border is affecting links */
+/* destination a {
+    text-decoration: none !important;  
+    border: none;                     
+    outline: none;                    
+  } */
+  
+
+
+
+
+
+/* Footer styling */
+footer {
+    background-color: #01070e; /* Footer background color */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+
+
+footer {
+    background-color: #01070e; /* Footer background color */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    padding: 20px 0; /* Padding above and below the text */
+    position: relative; /* Position relative for layout */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 1rem; /* Font size */
+}
